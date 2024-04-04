@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Navigator</title>
+    <style>
+    
+        .container{
+            padding: 100px;
+            font-family: helvetica;
+        }
+        .resaltado {
+            font-size:1.5em;
+            background-color:darkkhaki;
+        }
+
+             
+    </style>
+   
+</head>
+<body>
+   
+   <div class="container">
+       
+       <h1>Navigator</h1>
+       <p>La propiedad de solo lectura Window.navigator es una referencia al objeto Navigator, el cual puede ser utilizado para obtener información sobre la aplicación que está ejecutando el script.
+        </p>
+       
+      
+       <p id="txt1"></p>
+       
+       <p id="txt2">
+
+
+       </p>
+       <p id="txt3"></p>
+       <p id="txt4"></p>
+       
+
+
+       
+       
+       
+   </div>
+
+   
+   <script>
+    /* cookie visitas */ 
+    
+    let nombre=navigator.appName;
+	let version = navigator.appVersion;
+	let sistema=navigator.platform;
+    let codigo=navigator.appCodeName;
+    let cookieEnable=navigator.cookieEnable;
+    let agente=navigator.userAgent;
+    
+    texto = '<h1>Navigator</h1>';
+    texto += `<ul><li>Nombre  - navigator.appName: ${nombre} </li>
+        <li>Version - navigator.appVersion: ${version} </li>
+        <li>Sistema -navigator.platform : ${sistema} </li>
+        <li>Código Nav - navigator.appCodeName : ${codigo} </li>
+        <li>Cookies Habilitadas : navigator.cookieEnable : ${cookieEnable} </li>
+        <li>UserAgent navigator.userAgent : ${agente} </li>`;
+    document.getElementById("txt1").insertAdjacentHTML("afterbegin",texto);
+    
+   </script>
+</body>
+</html>

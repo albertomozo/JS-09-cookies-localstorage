@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Screen</title>
+    <style>
+    
+        .container{
+            padding: 100px;
+            font-family: helvetica;
+        }
+        
+        
+    </style>
+</head>
+<body>
+   
+   <div class="container">
+   <h1>window Tamaño de pantalla</h1> 
+   <p>
+    let w = window.innerWidth;<br>
+    let h = window.innerHeight;
+   </p>
+        <div id="txt1"></div>
+    
+       
+<script>
+    function pantalla()
+    {
+        mensaje = "<p>screen.width :" + screen.width + '</p>';
+        console.log(mensaje);
+        document.getElementById("txt1").innerHTML = mensaje;
+    }
+   // document.getElementByTag("body").addEventListener("change",pantalla(),false)
+   window.addEventListener("resize", function(){
+    // tu código aquí
+        console.log('La pantalla ha cambiado de tamaño');
+        mensaje = "<p>window.screenX :" + window.screenX +'<br>';
+        mensaje += "<p>window.screenY :" + window.screenY + '</p>';
+        mensaje +=
+        "Browser inner window width: " + window.innerWidth + "px<br>" +
+"Browser inner window height: " + innerHeight + "px";
+        console.log(mensaje);
+        document.getElementById("txt1").innerHTML = mensaje;
+        if (window.innerHeight == 372){
+            alert('se va dejar de ver la información');
+             
+        }
+},false);
+</script>         
+   
+       
+</div> 
+</body>
+</html>

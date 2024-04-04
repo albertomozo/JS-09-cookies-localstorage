@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies</title>
+    <style>
+    
+        .container{
+            padding: 100px;
+            font-family: helvetica;
+        }
+        .resaltado {
+            font-size:1.5em;
+            background-color:darkkhaki;
+        }
+        
+    </style>
+   
+</head>
+<body>
+   
+   <div class="container">
+       
+       <h1>Cookies - Location  - Redirección</h1>
+       <p>El objeto Location tiene la propiedad href, que sirve para ver la url de la página y realizar redirecciomes
+        </p>
+       <p>location.href</p>
+
+       <p><a href="02-Cookies-idioma.html">Cambiar cookie</a> </p> 
+      
+       <p id="txt1"></p>
+       
+       <p id="txt2">
+
+
+       </p>
+       <p id="txt3"></p>
+       <p id="txt4"></p>
+       
+
+
+       
+       
+       
+   </div>
+
+   <script src="js/jscookie.js"></script>
+   <script>
+     /* Cookie idiomas */
+    let idioma;
+    let texto2;
+    let idiomas=['ES','EUS','EN','FR'];
+    let tidioma=['Español','Euskera','Ingles','Frances'];
+    idioma = getCookie('idioma')
+    if (getCookie('idioma')!="") {
+        // hay cookie de idioma
+       idioma=getCookie('idioma');
+    }
+    /* redirección */
+
+   /*  url = "http://127.0.0.1:5500/09-COOKIES-LOCALSTORAGE/02-Cookies-idioma_redireccion_"+idioma.toLowerCase() +".html";
+    location.href=url; */
+    
+ 
+      switch (idioma){ 
+        case 'EUS':
+            location.href="02-Cookies-idioma_redireccion_eu.html"
+            break;
+        case 'EN':
+            location.href="02-Cookies-idioma_redireccion_en.html"
+            break;
+        case 'ES':
+            location.href="02-Cookies-idioma_redireccion_es.html"
+            break;
+          case 'FR':
+            location.href="02-Cookies-idioma_redireccion_fr.html"
+            break;
+        
+        default:
+           // location.href="02-Cookies-idioma_redireccion.html"
+           document.getElementById("txt3").innerHTML=`<p><span class="resaltado"> no hay redireccion  ${idioma} </span></p>`;
+           break;
+
+    }
+
+   </script>
+</body>
+</html>

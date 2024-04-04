@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Storage</title>
+    <style>
+    
+        .container{
+            padding: 100px;
+            font-family: helvetica;
+        }
+        .resaltado {
+            font-size:1.5em;
+            background-color:darkkhaki;
+        }
+        
+    </style>
+    
+</head>
+<body>
+   
+   <div class="container">
+       
+       <h1>Storage</h1>
+       <p>El objeto Storage (API de almacenamiento web) nos permite almacenar datos de manera local en el navegador y sin necesidad de realizar alguna conexión a una base de datos. 
+        </p>
+        <h2>Eliminar  los datos</h2>
+       <pre> 
+        // localStorage.removeItem(name)
+        localStorage.removeItem(Apellido)     
+       </pre>
+       <h2>Eliminar  los datos</h2>
+       <pre>
+       localStorage.clear()
+       </pre>
+       <p id="txt1"></p>
+       
+       <p id="txt2"></p>
+       <p id="txt3"></p>
+       <p id="txt4"></p>
+       
+
+
+       
+       
+       
+   </div>
+
+   
+   <script>
+    if (typeof(Storage) !== 'undefined') {
+        // Código cuando Storage es compatible
+        
+    } else {
+        // Código cuando Storage NO es compatible
+        document.getElementById("txt1").innerHTML = 'Este Navegador no soporta Storage';
+    }  
+   </script>
+   <script src="js/localstorageurl.js"></script>
+   
+</body>
+</html>

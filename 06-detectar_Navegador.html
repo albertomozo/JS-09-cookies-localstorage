@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Detectar Navegador</title>
+    <style>
+    
+        .container{
+            padding: 100px;
+            font-family: helvetica;
+        }
+        .resaltado {
+            font-size:1.5em;
+            background-color:darkkhaki;
+        }
+
+             
+    </style>
+   
+</head>
+<body>
+   
+   <div class="container">
+       
+       <h1>Detectar Navegador</h1>
+       <p>Usando userAgent Podemos determinar  el navegador.<br>
+        
+       
+      
+       <p id="txt1"></p>
+       
+       <p id="txt2">
+
+
+       </p>
+       <p id="txt3"></p>
+       <p id="txt4"></p>
+       
+
+
+       
+       
+       
+   </div>
+
+   
+   <script>
+    let agente=navigator.userAgent;
+    console.log(agente);
+    let nombreNavegador;
+    
+    if (agente.match('Chrome'))
+    {
+        nombreNavegador= "Chrome";
+    } else {
+        if (agente.match('Edge')){
+            nombreNavegador= "Edge";
+        } else {
+            if (agente.match('Firefox')){
+                nombreNavegador= "Firefox";
+            } else {
+                if (agente.match('Opera')){
+                    nombreNavegador= "Opera";
+                } else {
+                    nombreNavegador = "No conocemos tu navegador tu userAgent = " + agente;
+                } 
+            }  
+        }
+    }
+   
+    document.getElementById("txt1").insertAdjacentHTML("afterbegin",nombreNavegador);
+    document.getElementById("txt2").insertAdjacentHTML("afterbegin",agente);
+    
+   </script>
+</body>
+</html>

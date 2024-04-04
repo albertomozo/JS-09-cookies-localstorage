@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Cookies</title>
+    <style>
+    
+        .container{
+            padding: 100px;
+            font-family: helvetica;
+        }
+        .resaltado {
+            font-size:1.5em;
+            background-color:darkkhaki;
+        }
+        
+    </style>
+    <script>
+     
+    </script>
+</head>
+<body>
+   
+   <div class="container">
+       
+       <h1>Cookies</h1>
+       <p>Las cookies son un fichero que se guarda en un directorio del ordenador del usuario con información introducida por la página web.
+        </p>
+       <p>Se componen de pares de valores nombre=valor</p>
+       <p> Para introducir una cookie se utiliza el constructor
+        document.cookie = "nombreCookie=valor
+             [;expires=fecha y hora GMT]"</p>
+      
+       <p id="txt1"></p>
+       
+       <p id="txt2"></p>
+       <p id="txt3"></p>
+       <p id="txt4"></p>
+       
+
+
+       
+       
+       
+   </div>
+
+   <script src="js/jscookie.js"></script>
+   <script>
+    let numVisita;
+    let texto;
+    if (getCookie('visitas')!="") {
+        numVisita = Number(getCookie('visitas'))
+        texto = `es tu visita ${numVisita}`;
+        numVisita++;
+    } else {
+        texto= "Es tu primera visita</span><p>"
+        numVisita = 1;
+    }
+    texto = `<p><span class="resaltado">${texto}</span></p>`;
+    document.getElementById("txt1").innerHTML = texto;
+    setCookie('visitas', numVisita, 90)
+   </script>
+</body>
+</html>

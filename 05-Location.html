@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Location</title>
+    <style>
+    
+        .container{
+            padding: 100px;
+            font-family: helvetica;
+        }
+        .resaltado {
+            font-size:1.5em;
+            background-color:darkkhaki;
+        }
+
+             
+    </style>
+   
+</head>
+<body>
+   
+   <div class="container">
+       
+       <h1>Location</h1>
+       <p>Existe un  objeto location en cada pagina , que contiene información sobre la URL  del docuemnto actual.<br>
+        Cambiando la propiedad href de location indicamos al navegador que carge otra página. 
+        </p>
+       
+      
+       <p id="txt1"></p>
+       
+       <p id="txt2">
+
+
+       </p>
+       <p id="txt3"></p>
+       <p id="txt4"></p>
+       
+
+
+       
+       
+       
+   </div>
+
+   
+   <script>
+    let texto = location.href;
+    document.getElementById("txt1").insertAdjacentHTML("afterbegin",texto);
+    location.href="07-window_size.html";
+   </script>
+</body>
+</html>
