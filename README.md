@@ -44,4 +44,4 @@ Uso de coolkie de idioma y redirección a distinta página dependiendo del idiom
 
 ### DOCUMENTACION
 
-[![Presentacion COOKIES](https://img.shields.io/badge/cookies_localstorage-yellow?style=for-the-badge&logo=google-slides&logoColor=yellow&labelColor=black)]([![Presentacio_alumnos](https://img.shields.io/badge/ejer_json-yellow?style=for-the-badge&logo=google-slides&logoColor=yellow&labelColor=black)](https://docs.google.com/presentation/d/1ov_qBhBvdle4v3f6GzU2Kr5V_fBrVNWauP4iPO5Px04/edit?usp=sharing))
+[![Presentacion COOKIES](https://img.shields.io/badge/cookies_localstorage-yellow?style=for-the-badge&logo=google-slides&logoColor=yellow&labelColor=black)]((https://docs.google.com/presentation/d/1rTIUbxueAOxUOdXNKrYtGgCswSCpzSENOLpReap8E5A/edit#slide=id.g116e1bb3316_0_0))
