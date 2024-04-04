@@ -1,4 +1,4 @@
-### JS COOKIES-LOCALSTORAGE
+# JS COOKIES-LOCALSTORAGE
 
 ## Manejo básico de Cookies
 
@@ -22,17 +22,17 @@ Uso de coolkie de idioma y redirección a distinta página dependiendo del idiom
 
 ## Otros objetos globales
 
-# navigator
+### navigator
 04-Navigator.html
 
-# location
+### location
 05-Location.html
 
-# Obtener el navegador del usuario
+### Obtener el navegador del usuario
 
 06-detectar_Navegador.html
 
-# el evento onresize 
+### el evento onresize 
 07-window_size.html
 
 ## LOCALSTORAGE
@@ -44,4 +44,4 @@ Uso de coolkie de idioma y redirección a distinta página dependiendo del idiom
 
 ### DOCUMENTACION
 
-[![Presentacion COOKIES](https://img.shields.io/badge/cookies_localstorage-yellow?style=for-the-badge&logo=google-slides&logoColor=yellow&labelColor=black)]((https://docs.google.com/presentation/d/1rTIUbxueAOxUOdXNKrYtGgCswSCpzSENOLpReap8E5A/edit#slide=id.g116e1bb3316_0_0))
+[![Cookie_Localstorage](https://img.shields.io/badge/cookie_localstorage-yellow?style=for-the-badge&logo=google-slides&logoColor=yellow&labelColor=black)](https://docs.google.com/presentation/d/1rTIUbxueAOxUOdXNKrYtGgCswSCpzSENOLpReap8E5A/edit#slide=id.g116e1bb3316_0_0)
