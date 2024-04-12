@@ -36,7 +36,7 @@
 
        </p>
        <p id="txt3"></p>
-       <p id="txt4"><a href="02-Cookies-idioma_redireccion.html">Redirecionar por idioma</a></p>
+       <p id="txt4"><a href="03-Cookies-idioma_redireccion.html">Redirecionar por idioma</a></p>
        
 
 
@@ -66,7 +66,7 @@
     /* Cookie idiomas */
     let idioma;
     let texto2;
-    let idiomas=['ES','EU','EN','FR'];
+    let idiomas=['ES','EUS','EN','FR'];
     let tidioma=['Español','Euskera','Ingles','Frances'];
     let indice = -1;
 
@@ -75,13 +75,19 @@
         idioma=getCookie('idioma');
         console.log('idioma : ' + idioma);
         
-        
+        for (let i=0; i<idiomas.length  ;i++) {
+            console.log('idiomas['+i+']:'+idiomas[i]);
+            if (idiomas[i]==idioma){indice = i; }
+        }
+        if (indice >-1){
+            texto2 = `Tu idioma es ${tidioma[indice]}`;
+        } else {
+            texto2="Error en idioma";
+        }
     } else {
         idioma="";
         texto2 ="No tienes idioma seleccionado";
     }
-    // array method
-    indice = idiomas.findIndex(item => item === idioma);
     /* GENERO EL HTML A TRAVES DE LOS ARRAY */
     let textoselect='<select name="cidioma" id="cidioma">';
     for (let i=0;i<idiomas.length;i++){
@@ -91,7 +97,7 @@
          textoselect += `>${tidioma[i]}</option>`;
     }
     textoselect+="</select>";
-    document.getElementById("txt2").innerHTML=textoselect ;
+    document.getElementById("txt2").innerHTML=textoselect + `<p>${texto2}</p>`;
     /* FIN GENERACION CODIGO HTML */
     /* evento on change */
     let selectIdioma = document.getElementById("cidioma");
@@ -103,7 +109,6 @@
         valorIdioma=document.getElementById('cidioma').value;
         setCookie('idioma',valorIdioma,90);
         document.getElementById("txt3").innerHTML=`<p><span class="resaltado"> Has cambiado la cookie a ${valorIdioma} </span></p>`;
-      
     }
     
    </script>

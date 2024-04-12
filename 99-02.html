@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="Español">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MultIdioma</title>
+    <script src="js/jscookie.js"></script>
+    <script>
+        let idiomas=['ES','EU','EN','FR','TR','DE'];
+            let tidioma=['Español','Euskera','Ingles','Frances','Turco','Aleman'];
+        // LEE LA COOKI IDIOMA 
+        if (getCookie('idioma')!="") {
+            // hay cookie de idioma
+            idioma=getCookie('idioma');
+            console.log('idioma : ' + idioma);
+            hizkuntza= idioma;
+        
+        } else {
+            idioma="";
+            
+            
+            hizkuntza = navigator.language;
+        }
+
+
+        
+        
+        let fichIdioma;
+
+        //if (hizkuntza === 'EU' || hizkuntza === 'EN' || hizkuntza === 'FR' || hizkuntza === 'TR' ) 
+        if ( idiomas.includes(hizkuntza))
+        {
+            fichIdioma = hizkuntza + '.js';
+        } else {
+            fichIdioma = 'es.js';
+        }
+
+        // Crear un nuevo elemento script
+        const scriptElement = document.createElement('script');
+        // Establecer el atributo src con el valor de fichIdioma
+        scriptElement.src = 'lang/' + fichIdioma;
+        // Agregar el elemento script al final del cuerpo del documento
+        document.head.appendChild(scriptElement);
+
+        // Función que se ejecutará después de que se cargue el archivo de idioma
+        function cargarTexto() {
+            let idioma;
+            let texto2;
+            
+            let indice = -1;
+
+            if (getCookie('idioma')!="") {
+                // hay cookie de idioma
+                idioma=getCookie('idioma');
+                console.log('idioma : ' + idioma);
+                
+                
+            } else {
+                idioma="";
+                texto2 ="No tienes idioma seleccionado";
+            }
+            /* GENERO EL HTML A TRAVES DE LOS ARRAY */
+            indice = idiomas.findIndex(item => item === idioma);
+            let textoselect='<select name="cidioma" id="cidioma">';
+            for (let i=0;i<idiomas.length;i++){
+            
+                textoselect += `<option value="${idiomas[i]}"`;
+                if (indice == i) {textoselect += 'SELECTED' }
+                textoselect += `>${tidioma[i]}</option>`;
+            }
+            textoselect+="</select>";
+            document.getElementById("selectidiomas").innerHTML=textoselect ;
+            /* FIN GENERACION CODIGO HTML */
+            /* evento on change */
+            let selectIdioma = document.getElementById("cidioma");
+            selectIdioma.addEventListener("change",cookieIdioma);
+
+        
+           
+            let pagina = document.getElementById("pag");
+            pagina.innerHTML = `<h1>${inicio}</h1>
+            <p>${hola}</p>
+            <p>${adios}</p>
+            <p>${navigator.userAgent}</p>
+            <p>${location.href}</p>
+            <p>${getCookie('idioma')}</p>`;
+        }
+        function cookieIdioma(){
+                let valorIdioma;
+                valorIdioma=document.getElementById('cidioma').value;
+                setCookie('idioma',valorIdioma,90);
+                location.href = location.href;
+                
+            
+            
+         }
+    </script>
+</head>
+<body>
+    <nav id="selectidiomas">
+      
+    </nav>
+    <div id="pag"></div>
+    <script>
+        // Llamar a la función cargarTexto() después de que se cargue el archivo de idioma
+        window.addEventListener('load', cargarTexto);
+    </script>
+</body>
+</html>
+
