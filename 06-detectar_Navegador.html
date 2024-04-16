@@ -49,24 +49,26 @@
     console.log(agente);
     let nombreNavegador;
     
-    if (agente.match('Chrome'))
-    {
-        nombreNavegador= "Chrome";
-    } else {
+ 
         if (agente.match('Edge')){
             nombreNavegador= "Edge";
         } else {
             if (agente.match('Firefox')){
                 nombreNavegador= "Firefox";
             } else {
-                if (agente.match('Opera')){
+                if (agente.match('OPR')){
                     nombreNavegador= "Opera";
-                } else {
-                    nombreNavegador = "No conocemos tu navegador tu userAgent = " + agente;
+                } else {  
+                     if (agente.match('Chrome'))
+                    {
+                        nombreNavegador= "Chrome";
+                    } else {
+                        nombreNavegador = "No conocemos tu navegador tu userAgent = " + agente;
+                    }
                 } 
             }  
         }
-    }
+    
    
     document.getElementById("txt1").insertAdjacentHTML("afterbegin",nombreNavegador);
     document.getElementById("txt2").insertAdjacentHTML("afterbegin",agente);

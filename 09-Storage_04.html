@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Storage</title>
+    <style>
+    
+        .container{
+            padding: 100px;
+            font-family: helvetica;
+            background-color : white;
+        }
+        .resaltado {
+            font-size:1.5em;
+            background-color:darkkhaki;
+        }
+        
+    </style>
+    
+</head>
+<body>
+   
+   <div class="container">
+       
+       <h1>Storage</h1>
+       <p>El objeto Storage (API de almacenamiento web) nos permite almacenar datos de manera local en el navegador y sin necesidad de realizar alguna conexión a una base de datos. 
+        </p>
+        <h2>Preferencias</h2>
+       <pre> 
+            Seleccion de color de fondo
+       </pre>
+         <p>Color de fondo : <input type="color" id="color"> </p>
+       <p id="txt1"></p>
+       
+       <p id="txt2"></p>
+       <p id="txt3"></p>
+       <p id="txt4"></p>
+       
+
+
+       
+       
+       
+   </div>
+
+   
+   <script>
+    if (typeof(Storage) !== 'undefined') {
+       // inicializamos color en body e input 
+        let colorValor = ''
+       if (localStorage.getItem('color'))
+       {
+            colorValor = localStorage.getItem('color');
+       }
+       document.body.style.backgroundColor = colorValor;
+       document.getElementById('color').value = colorValor;
+        
+    } else {
+        // Código cuando Storage NO es compatible
+        document.getElementById("txt1").innerHTML = 'Este Navegador no soporta Storage';
+    }  
+
+    // didparador de evento del input color
+    document.getElementById('color').addEventListener('keydown', function (event) {
+        if (event.key == 'Enter' || event.key == 'Tab')
+        {
+            localStorage.setItem('color',document.getElementById('color').value);
+            document.body.style.backgroundColor = document.getElementById('color').value;
+            document.getElementById('color').value = document.getElementById('color').value;
+        }
+     
+    
+    }, false);
+
+   </script>
+   <script src="js/localstorageurl.js"></script>
+   
+</body>
+</html>

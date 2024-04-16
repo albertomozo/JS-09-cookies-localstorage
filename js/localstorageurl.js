@@ -1,49 +1,24 @@
-/* localstorage */
+// Objeto que deseas agregar al historial
 let sUrl=location.href;
 const d = new Date();
-d.getTime();
-// obtengo el valor de la clave paginas del localstorage
-//let vPaginas = localStorage.getItem('paginas');
-//document.write("Valor de paginas : "  + vPaginas);
-let visita;
-visita = {
-    "pagina" : sUrl,
-    "timestamp" : d.getTime()
-}
-/*
-console.log('Vpaginas ' + vPaginas);
-if (vPaginas == null){
-    vPaginas = new Array;
-} */
-//////////////////////////
+let nuevoObjeto = { 'visita': sUrl, 'timestamp': d.getTime() };
+// Recuperar el historial existente del localStorage
+let historialExistente = localStorage.getItem('historial');
 
-// Obtengo el string previamente salvado y luego
-let guardado = localStorage.getItem('historial');
-if (guardado){
-    //console.log('objetoObtenido: '+ JSON.parse(guardado));
-} else {
-        guardado = '';
-}
+// Si hay historial existente, conviértelo de cadena JSON a un array de objetos;
+// de lo contrario, inicializa un array vacío.
+let historialArray = historialExistente ? JSON.parse(historialExistente) : [];
 
+// Agregar el nuevo objeto al array de historial
+historialArray.push(nuevoObjeto);
 
+// Convertir el array de objetos a una cadena JSON actualizada
+let historialActualizado = JSON.stringify(historialArray);
 
-//////////////////////////////////////////
-let miObjeto = { 'visita': sUrl  , 'timestamp':  d.getTime()  };
+// Guardar el historial actualizado en el localStorage
+localStorage.setItem('historial', historialActualizado);
 
-guardado += JSON.stringify(miObjeto) ;
-console.log("guardado " + guardado);
-// Guardo el objeto como un string
-localStorage.setItem('historial', guardado);
+console.log("Historial actualizado:", historialActualizado);
 
-//////////////////////////////////////////////
-
-/*
-console.log('visita ' + visita);
-vPaginas = new Array;
-vPaginas.push(visita);
-console.log('visita ' + vPaginas);
-localStorage.setItem("paginas",vPaginas);
-
-/* para visualizar efecto en la pagina */
 document.write('<p>Texto añadido a localStorage.setItem("paginas",vPaginas);');
 document.write(`{ "pagina": ${sUrl} , "timestamp": ${d.getTime()}}<p>`);

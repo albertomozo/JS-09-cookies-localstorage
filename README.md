@@ -1,14 +1,19 @@
 # JS COOKIES-LOCALSTORAGE
 
+- js/jscookie.js 
+funciones para obtener y grabar cookies
+- lang 
+carpeta de ficheros de traducció para ejercicio multidioma
+
 ## Manejo básico de Cookies
 
-Funciones para obytener y grabar cookies.
+Funciones para obtener y grabar cookies.
 
 01-Cookies.html
 
 
 ## Ejercicos para usar cookie de idiomas
-Uso de coolkie de idioma y redirección a distinta página dependiendo del idioma.
+Uso de coolkie de idioma y redirección a distintas páginas dependiendo del idioma.
 
 02-Cookies-idioma.html
 02-Cookies-idioma_redireccion.html
@@ -17,8 +22,14 @@ Uso de coolkie de idioma y redirección a distinta página dependiendo del idiom
 02-Cookies-idioma_redireccion_eu.html
 02-Cookies-idioma_redireccion_fr.html
 
-## Recorres todas las cookies
-03-Cookies-recorrer.html
+## web multidioma con fichero de variables de lenguaje
+
+03-Cookie-idioma-lang.html
+
+Las textos estan guardados constantes en archivos xx.js en la carpeta lang. 
+Si tenemos la cookie de idioma, buscamos el fichero correspondiente en la carpeta lang y lo cargamos. 
+ 
+
 
 ## Otros objetos globales
 
@@ -40,6 +51,7 @@ Uso de coolkie de idioma y redirección a distinta página dependiendo del idiom
 09-Storage_01.html
 09-Storage_02.html
 09-Storage_03.html
+09-Storage_04.html
 10-Storage-ejercicio.html
 
 ### DOCUMENTACION
